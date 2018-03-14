@@ -1,0 +1,16 @@
+<div class="title-block">
+  <h3 class="title">
+    Страница истории <span class="sparkline bar"></span>
+  </h3>
+</div>
+<div *ngIf="!isLoaded" class="text-center">
+  Loading...
+</div>
+<div *ngIf="isLoaded">
+  <na-history-chard [data]="chartData"></na-history-chard>
+  <na-history-events
+    [events]="events"
+    [categories]="categories"
+  ></na-history-events>
+  <na-history-filter></na-history-filter>
+</div>

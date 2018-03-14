@@ -1,0 +1,29 @@
+<div class="title-block">
+  <h3 class="title">
+    Страница записей <span class="sparkline bar"></span>
+  </h3>
+</div>
+<div class="section text-center" *ngIf="!isLoaded">
+  Loading...
+</div>
+
+<section class="section" *ngIf="isLoaded">
+  <div class="row">
+    <div class="col-md-6">
+      <na-add-event
+        [categories]="categories"
+      ></na-add-event>
+    </div>
+    <div class="col-md-6">
+      <na-add-category (onCategoryAdd)="newCategoryAdded($event)"></na-add-category>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <na-edit-category
+        [categories]="categories"
+        (onCateforyEdit)="categoryWasEdit($event)"
+      ></na-edit-category>
+    </div>
+  </div>
+</section>
