@@ -8,7 +8,7 @@
     }
   ],
   "bill": {
-    "value": 84598,
+    "value": 82498,
     "currency": "RUB"
   },
   "categories": [
@@ -26,6 +26,11 @@
       "id": 3,
       "name": "Машина",
       "capacity": 7000
+    },
+    {
+      "name": "New1",
+      "capacity": 100,
+      "id": 4
     }
   ],
   "events": [
@@ -68,6 +73,30 @@
       "date": "10.07.2017 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 3,
+      "date": "14.03.2018 12:31:25",
+      "description": "1123sadfAf",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 4,
+      "date": "14.03.2018 12:32:17",
+      "description": "afsdSf",
+      "id": 7
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 1,
+      "date": "15.03.2018 08:22:43",
+      "description": "test",
+      "id": 8
     }
   ]
 }

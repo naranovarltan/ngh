@@ -1,7 +1,12 @@
 <div class="title-block">
-  <h3 class="title">
+  <h3 class="title pull-left">
     Страница истории <span class="sparkline bar"></span>
   </h3>
+  <div class="pull-right">
+    <button class="btn-sm btn btn-primary-outline" (click)="openFilter()">
+      <i class="fa fa-filter"></i>
+    </button>
+  </div>
 </div>
 <div *ngIf="!isLoaded" class="text-center">
   Loading...
@@ -9,8 +14,14 @@
 <div *ngIf="isLoaded">
   <na-history-chard [data]="chartData"></na-history-chard>
   <na-history-events
-    [events]="events"
+    [events]="filteredEvents"
     [categories]="categories"
   ></na-history-events>
-  <na-history-filter></na-history-filter>
+  <div *ngIf="isFilterVisible">
+    <na-history-filter
+      (onFilterCancel)="onFilterCancel()"
+      (onFilterApply)="onFilterApply($event)"
+      [categories]="categories"
+    ></na-history-filter>
+  </div>
 </div>
