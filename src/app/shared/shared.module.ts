@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {PreloaderComponent} from './components/preloader/preloader.component';
 
 @NgModule({
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
     NgxChartsModule],
   exports: [
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
-    NgxChartsModule]
+    NgxChartsModule,
+    PreloaderComponent],
+  declarations: [PreloaderComponent]
 })
 export class SharedModule {
 }

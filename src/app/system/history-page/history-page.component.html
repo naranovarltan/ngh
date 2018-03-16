@@ -9,7 +9,7 @@
   </div>
 </div>
 <div *ngIf="!isLoaded" class="text-center">
-  Loading...
+  <na-preloader></na-preloader>
 </div>
 <div *ngIf="isLoaded">
   <na-history-chard [data]="chartData"></na-history-chard>
