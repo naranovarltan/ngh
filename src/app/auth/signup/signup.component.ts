@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'na-signup',
@@ -14,9 +15,11 @@ export class SignupComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(
-    private userService: UsersService,
-    private router: Router) { }
+  constructor(private userService: UsersService,
+              private router: Router,
+              private title: Title) {
+    title.setTitle('Регистрация');
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -28,9 +31,11 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    const {email,
+    const {
+      email,
       password,
-      name} = this.form.value;
+      name
+    } = this.form.value;
     const user = new User(
       email, password, name
     );
@@ -48,11 +53,11 @@ export class SignupComponent implements OnInit {
     return new Promise((resolve, rejected) => {
       this.userService.getUserByEmail(control.value)
         .subscribe((user: User) => {
-        if (user) {
-          resolve({chEmail: true});
-        } else {
-          rejected(null);
-        }
+          if (user) {
+            resolve({chEmail: true});
+          } else {
+            rejected(null);
+          }
         });
     });
   }

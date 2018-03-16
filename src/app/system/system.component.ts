@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
+
+import {fadeStateTrigget} from '../shared/amination/fade.animation';
 
 @Component({
   selector: 'na-system',
   templateUrl: './system.component.html',
-  styleUrls: ['./system.component.css']
+  animations: [fadeStateTrigget]
 })
-export class SystemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class SystemComponent {
+  @HostBinding('@fade') a = true;
 }
