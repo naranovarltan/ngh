@@ -15,8 +15,13 @@
   </div>
 
   <div class="row" *ngIf="isLoaded">
-    <na-bill-card [bill]="bill" [currency]="currency"></na-bill-card>
-    <na-currency-card [currency]="currency"></na-currency-card>
+    <na-bill-card
+      [bill]="bill"
+      [currency]="currency"
+    ></na-bill-card>
+    <na-currency-card
+      [currency]="currency"
+    ></na-currency-card>
   </div>
 
 </section>

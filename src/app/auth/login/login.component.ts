@@ -18,7 +18,7 @@ import {Meta, Title} from '@angular/platform-browser';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  message: Message;
+  message: Message = new Message('danger', '');
 
   constructor(private userService: UsersService,
               private route: ActivatedRoute,
@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.message = new Message('danger', '');
     this.route.queryParams
       .subscribe((params: Params) => {
           if (params['nowCanLogin']) {
