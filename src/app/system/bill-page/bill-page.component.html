@@ -15,12 +15,12 @@
   </div>
 
   <div class="row" *ngIf="isLoaded">
+    <!--[currency]="currency"-->
     <na-bill-card
       [bill]="bill"
-      [currency]="currency"
     ></na-bill-card>
+    <!--[currency]="currency"-->
     <na-currency-card
-      [currency]="currency"
     ></na-currency-card>
   </div>
 

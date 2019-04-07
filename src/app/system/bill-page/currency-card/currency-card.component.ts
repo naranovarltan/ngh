@@ -7,7 +7,7 @@ import {Component, Input } from '@angular/core';
 })
 export class CurrencyCardComponent {
 
-  @Input() currency: any;
+  // @Input() currency: any;
 
   currenecies: string[] = ['USD', 'EUR'];
 

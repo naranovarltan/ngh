@@ -18,9 +18,9 @@ export class BillService extends BaseApi {
     return this.get('bill');
   }
 
-  getCurrency(base: string = 'RUB') {
-    return this.http.get(`http://api.fixer.io/latest?base=${base}`);
-  }
+  // getCurrency(base: string = 'RUB') {
+  //   return this.http.get(`https://api.fixer.io/latest?base=${base}`);
+  // }
 
   updateBill(bill: Bill) {
     return this.put('bill', bill);
