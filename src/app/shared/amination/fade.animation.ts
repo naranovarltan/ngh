@@ -11,6 +11,8 @@ export const fadeStateTrigget = trigger('fade', [
       animate(1000,
         style({
           opacity: 0
-        })))
+        })
+      )
+    )
   ]
 );
